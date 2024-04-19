@@ -18,6 +18,10 @@ public class UserServlet extends HttpServlet {
         String cameFrom = req.getParameter("cameFrom");
         if (cameFrom.equals("/userCreate.jsp")) {
             String name = req.getParameter("name");
+            if (name.isBlank()) {
+                resp.sendRedirect("http://localhost:8080/userCreate.jsp");
+                return;
+            }
             User user = User.builder()
                     .name(name)
                     .build();
@@ -25,6 +29,10 @@ public class UserServlet extends HttpServlet {
         } else if (cameFrom.equals("/userUpdate.jsp")) {
             String name = req.getParameter("name");
             Integer userId = Integer.parseInt(req.getParameter("userId"));
+            if (name.isBlank()) {
+                resp.sendRedirect("http://localhost:8080/userUpdate.jsp?userId="+userId);
+                return;
+            }
             User user = userRepo.findById(userId);
             userRepo.begin();
             user.setName(name);

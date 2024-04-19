@@ -13,9 +13,6 @@ import uz.pdp.task_2_collab.repo.UserRepo;
 import java.io.IOException;
 import java.util.List;
 
-import static uz.pdp.task_2_collab.config.MyListener.em;
-import static uz.pdp.task_2_collab.config.MyListener.emf;
-
 @WebServlet(name = "order servlet", value = "/order/servlet")
 public class OrderServlet extends HttpServlet {
     private final OrderRepo orderRepo = new OrderRepo();
