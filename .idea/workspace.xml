@@ -10,14 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95fafe96-d3fd-4aa5-a35d-cc3640dcdd46" name="Changes" comment="second one">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/orderCreate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/orderDelete.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/orderUpdate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/repo/BaseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/repo/BaseRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/servlet/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/servlet/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orderCrud.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orderCrud.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +214,7 @@
       <workItem from="1713540666931" duration="1737000" />
       <workItem from="1713542415408" duration="6245000" />
       <workItem from="1713549821534" duration="751000" />
-      <workItem from="1713550579156" duration="1916000" />
+      <workItem from="1713550579156" duration="2237000" />
     </task>
     <task id="LOCAL-00001" summary="first commit by M">
       <option name="closed" value="true" />
@@ -246,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713550733222</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="second one">
+      <option name="closed" value="true" />
+      <created>1713552571819</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713552571819</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

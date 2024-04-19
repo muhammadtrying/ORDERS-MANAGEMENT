@@ -19,7 +19,7 @@ public class MyListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         emf = Persistence.createEntityManagerFactory("default");
         em = emf.createEntityManager();
-        init();
+//        init();
         ServletContextListener.super.contextInitialized(sce);
     }
 

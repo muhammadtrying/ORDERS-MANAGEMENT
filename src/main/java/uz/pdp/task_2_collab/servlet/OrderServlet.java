@@ -20,22 +20,29 @@ public class OrderServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String status = req.getParameter("status");
-        List<Order> filteredOrders = orderRepo.findAll().stream().filter(order -> order.getStatus().name().equals(status)).toList();
-        req.getSession().setAttribute("filteredOrders", filteredOrders);
-        resp.sendRedirect("http://localhost:8080/");
+
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        int userId = Integer.parseInt(req.getParameter("userId"));
+        if (req.getParameter("status") != null) {
+            String status = req.getParameter("status");
+            List<Order> filteredOrders = orderRepo.findAll().stream().filter(order -> order.getStatus().name().equals(status)).toList();
+            req.getSession().setAttribute("filteredOrders", filteredOrders);
+            resp.sendRedirect("http://localhost:8080/");
+            return;
+        } else if (req.getParameter("userId") != null) {
+            Integer userId = Integer.parseInt(req.getParameter("userId"));
 
-        User user = userRepo.findById(userId);
-        Order order = Order.builder()
-                .userId(user)
-                .status(Status.OPEN)
-                .build();
-        orderRepo.save(order);
-        resp.sendRedirect("http://localhost:8080/orderCrud.jsp");
+            User user = userRepo.findById(userId);
+            Order order = Order.builder()
+                    .userId(user)
+                    .status(Status.OPEN)
+                    .build();
+            orderRepo.save(order);
+            resp.sendRedirect("http://localhost:8080/orderCrud.jsp");
+            return;
+        }
+        resp.sendRedirect("http://localhost:8080/orderCreate.jsp");
     }
 }

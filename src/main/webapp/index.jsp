@@ -68,15 +68,15 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="btn-group d-flex">
-                <form action="order/servlet" method="get">
+                <form action="order/servlet" method="post">
                     <input type="hidden" name="status" value="<%=Status.OPEN.name()%>">
                     <button type="submit" class="btn btn-dark btn-lg">Open Orders</button>
                 </form>
-                <form action="order/servlet" method="get">
+                <form action="order/servlet" method="post">
                     <input type="hidden" name="status" value="<%=Status.IN_PROGRESS.name()%>">
                     <button type="submit" class="btn btn-dark btn-lg">Processing Orders</button>
                 </form>
-                <form action="order/servlet" method="get">
+                <form action="order/servlet" method="post">
                     <input type="hidden" name="status" value="<%=Status.COMPLETED.name()%>">
                     <button type="submit" class="btn btn-dark btn-lg">Completed Orders</button>
                 </form>
