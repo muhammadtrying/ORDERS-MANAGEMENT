@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.sql.Timestamp;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -16,6 +19,8 @@ public class Order extends BaseEntity {
     private User userId;
     @Enumerated(EnumType.STRING)
     private Status status;
+    @CreationTimestamp
+    private Timestamp createdAt;
 
     @Builder
 

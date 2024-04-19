@@ -32,7 +32,7 @@ public class BaseRepo<T, I> {
         return em.createQuery("from " + persistenceClass.getSimpleName(), persistenceClass).getResultList();
     }
 
-    void save(T t) {
+   public void save(T t) {
         begin();
         em.persist(t);
         commit();
