@@ -13,37 +13,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Second Task</title>
     <link rel="stylesheet" href="static/bootstrap.min.css">
+    <style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+    </style>
 </head>
-<style>
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-</style>
 <body>
 
 <%
-
     UserRepo userRepo = new UserRepo();
 
     List<Order> orders = new ArrayList<>();
-    Object objectFilteredOrders = request.getAttribute("filteredOrders");
+    Object objectFilteredOrders = session.getAttribute("filteredOrders");
     if (objectFilteredOrders != null) {
         orders = (List<Order>) objectFilteredOrders;
     }
@@ -53,7 +57,6 @@
     if (session.getAttribute("currentUser") != null) {
         currentUser = (User) session.getAttribute("currentUser");
     }
-
 
     Optional<User> optionalUser = userRepo.getUserByCookie(request);
     if (optionalUser.isPresent()) {
@@ -65,22 +68,27 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="btn-group d-flex">
-                <div>
-                    <a class="btn-dark btn-lg" href="/order/servlet?status=<%=Status.OPEN.name()%>">Open Orders</a>
-                </div>
-                <div><a class="btn-dark btn-lg" href="/order/servlet?status=<%=Status.IN_PROGRESS.name()%>">Processing
-                    Orders</a></div>
-                <div><a class="btn-dark btn-lg" href="/order/servlet?status=<%=Status.COMPLETED.name()%>">Completed
-                    Orders</a>
-                </div>
+                <form action="order/servlet" method="get">
+                    <input type="hidden" name="status" value="<%=Status.OPEN.name()%>">
+                    <button type="submit" class="btn btn-dark btn-lg">Open Orders</button>
+                </form>
+                <form action="order/servlet" method="get">
+                    <input type="hidden" name="status" value="<%=Status.IN_PROGRESS.name()%>">
+                    <button type="submit" class="btn btn-dark btn-lg">Processing Orders</button>
+                </form>
+                <form action="order/servlet" method="get">
+                    <input type="hidden" name="status" value="<%=Status.COMPLETED.name()%>">
+                    <button type="submit" class="btn btn-dark btn-lg">Completed Orders</button>
+                </form>
             </div>
+
         </div>
         <%if (currentUser == null) {%>
         <div class="col-md-6 text-right">
             <a class="btn-dark btn-lg" href="login.jsp">Login</a>
         </div>
         <% } else { %>
-        <div class="dropdown float-right">
+        <div class="dropdown position-absolut ">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                 <%= currentUser.getName() %>
             </button>
