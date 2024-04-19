@@ -5,6 +5,7 @@
 <%@ page import="uz.pdp.task_2_collab.entity.User" %>
 <%@ page import="java.util.Optional" %>
 <%@ page import="uz.pdp.task_2_collab.repo.UserRepo" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +63,7 @@
     if (optionalUser.isPresent()) {
         currentUser = optionalUser.get();
     }
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 %>
 <a class="btn-lg btn-dark" href="http://localhost:8080/">HomePage</a>
 <div class="container mt-5">
@@ -108,6 +110,7 @@
                 <tr>
                     <th>Order Id</th>
                     <th>User</th>
+                    <th>Created At</th>
                     <th>Status</th>
                 </tr>
                 </thead>
@@ -117,6 +120,9 @@
                     <td><%= order.getId() %>
                     </td>
                     <td><%= order.getUserId().getName()%>
+                    </td>
+                    <td>
+                        <%=dateFormat.format(order.getCreatedAt())%>
                     </td>
                     <td><%= order.getStatus().name()%>
                     </td>

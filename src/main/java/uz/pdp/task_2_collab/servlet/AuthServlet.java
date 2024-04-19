@@ -13,6 +13,10 @@ import java.util.Optional;
 public class AuthServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        if (req.getParameter("name") == null || req.getParameter("password") == null) {
+            resp.sendRedirect("http://localhost:8080/login.jsp");
+            return;
+        }
         String name = req.getParameter("name");
         String password = req.getParameter("password");
         String rememberMe = req.getParameter("rememberMe");
@@ -21,7 +25,7 @@ public class AuthServlet extends HttpServlet {
 
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            if (user.getPassword().equals(password)) {
+            if (Objects.equals(user.getPassword(), password)) {
                 HttpSession session = req.getSession();
                 session.setAttribute("currentUser", user);
 

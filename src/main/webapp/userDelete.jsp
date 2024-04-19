@@ -2,7 +2,7 @@
 <%@ page import="uz.pdp.task_2_collab.repo.UserRepo" %>
 <%@ page import="uz.pdp.task_2_collab.entity.User" %>
 <%@ page import="uz.pdp.task_2_collab.repo.OrderRepo" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>User</title>
@@ -23,10 +23,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-10 main-content">
-            <h1>User</h1>
-            <div style="font-size: larger"><a href="http://localhost:8080/admin.jsp">HOMEPAGE</a>
-                <a class="offset-1" style="font-size: large" href="userCreate.jsp">Create</a>
-                <a class="offset-1" style="font-size: large" href="userDelete.jsp">Delete</a>
+            <h1>User delete</h1>
+            <div style="font-size: larger"><a href="http://localhost:8080/userCrud.jsp">HOMEPAGE</a>
             </div>
             <table class="table table-striped">
                 <thead>
@@ -50,8 +48,8 @@
                         <%=orderRepo.findAll().stream().filter(order -> order.getUserId().getId().equals(user.getId())).toList().size()%>
                     </td>
                     <td>
-                        <a href="userUpdate.jsp?userId=<%=user.getId()%>">
-                            Update🔄
+                        <a href="userServlet?userId=<%=user.getId()%>">
+                            Delete❌
                         </a>
                     </td>
                 </tr>

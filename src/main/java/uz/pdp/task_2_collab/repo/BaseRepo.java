@@ -38,11 +38,11 @@ public class BaseRepo<T, I> {
         commit();
     }
 
-    void begin() {
+   public void begin() {
         em.getTransaction().begin();
     }
 
-    void commit() {
+    public void commit() {
         em.getTransaction().commit();
     }
 }

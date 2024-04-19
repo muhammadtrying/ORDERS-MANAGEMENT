@@ -13,6 +13,9 @@ import uz.pdp.task_2_collab.repo.UserRepo;
 import java.io.IOException;
 import java.util.List;
 
+import static uz.pdp.task_2_collab.config.MyListener.em;
+import static uz.pdp.task_2_collab.config.MyListener.emf;
+
 @WebServlet(name = "order servlet", value = "/order/servlet")
 public class OrderServlet extends HttpServlet {
     private final OrderRepo orderRepo = new OrderRepo();
@@ -20,7 +23,10 @@ public class OrderServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
+        Integer orderId = Integer.parseInt(req.getParameter("orderId"));
+        Order order = orderRepo.findById(orderId);
+        orderRepo.deleteById(order.getId());
+        resp.sendRedirect("http://localhost:8080/orderDelete.jsp");
     }
 
     @Override
@@ -30,6 +36,20 @@ public class OrderServlet extends HttpServlet {
             List<Order> filteredOrders = orderRepo.findAll().stream().filter(order -> order.getStatus().name().equals(status)).toList();
             req.getSession().setAttribute("filteredOrders", filteredOrders);
             resp.sendRedirect("http://localhost:8080/");
+            return;
+        } else if (req.getParameter("cameFrom") != null && req.getParameter("cameFrom").equals("/orderUpdate.jsp")) {
+            Integer orderId = Integer.parseInt(req.getParameter("orderId"));
+            Integer userId = Integer.parseInt(req.getParameter("userId"));
+            String statusName = req.getParameter("statusName");
+
+            Order order = orderRepo.findById(orderId);
+            User user = userRepo.findById(userId);
+            Status status = Status.valueOf(statusName);
+            orderRepo.begin();
+            order.setStatus(status);
+            order.setUserId(user);
+            resp.sendRedirect("http://localhost:8080/orderCrud.jsp");
+            orderRepo.commit();
             return;
         } else if (req.getParameter("userId") != null) {
             Integer userId = Integer.parseInt(req.getParameter("userId"));
