@@ -23,7 +23,6 @@ public class Order extends BaseEntity {
     private Timestamp createdAt;
 
     @Builder
-
     public Order(Integer id, User userId, Status status) {
         super(id);
         this.userId = userId;

@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95fafe96-d3fd-4aa5-a35d-cc3640dcdd46" name="Changes" comment="last commit">
+    <list default="true" id="95fafe96-d3fd-4aa5-a35d-cc3640dcdd46" name="Changes" comment="last commit no bugs at all">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/servlet/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uz/pdp/task_2_collab/entity/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +215,17 @@
       <workItem from="1713542415408" duration="6245000" />
       <workItem from="1713549821534" duration="751000" />
       <workItem from="1713550579156" duration="7590000" />
-      <workItem from="1713559388170" duration="1118000" />
+      <workItem from="1713559388170" duration="1278000" />
+      <workItem from="1713566045464" duration="3188000" />
+      <workItem from="1713764453180" duration="31000" />
+      <workItem from="1713764932700" duration="14000" />
+      <workItem from="1713767246336" duration="168000" />
+      <workItem from="1713778675384" duration="1482000" />
+      <workItem from="1713780249106" duration="37000" />
+      <workItem from="1713781881556" duration="602000" />
+      <workItem from="1713782915240" duration="6000" />
+      <workItem from="1713868383935" duration="685000" />
+      <workItem from="1713885302041" duration="6000" />
     </task>
     <task id="LOCAL-00001" summary="first commit by M">
       <option name="closed" value="true" />
@@ -265,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713558090931</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="last commit no bugs at all">
+      <option name="closed" value="true" />
+      <created>1713560834219</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713560834219</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +293,7 @@
     <MESSAGE value="first commit by M" />
     <MESSAGE value="second one" />
     <MESSAGE value="last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="last commit" />
+    <MESSAGE value="last commit no bugs at all" />
+    <option name="LAST_COMMIT_MESSAGE" value="last commit no bugs at all" />
   </component>
 </project>
