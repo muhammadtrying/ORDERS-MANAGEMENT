@@ -7,8 +7,6 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/second_project_collab"/>
-<!--             <property name="javax.persistence.jdbc.user" value=""/> -->
-<!--             <property name="javax.persistence.jdbc.password" value=""/> -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
